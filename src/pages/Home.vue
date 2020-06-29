@@ -1,16 +1,16 @@
 <template>
     <div class="home">
             <Ban></Ban>
-           <div class="a">
-               <p>
-                   11111111111
-               </p>
-
-           </div>
+            <Kj></Kj>
+            <Zt></Zt>
+            <Tj></Tj>
     </div>
 </template>
 <script>
 import Banner from "../components/Banner"
+import Kj from "../components/Kj"
+import Zt from "../components/Zt"
+import Tj from "../components/Tj"
 export default {
     data(){
           return {
@@ -18,7 +18,10 @@ export default {
           }
     },
     components:{
-        Ban:Banner
+        Ban:Banner,
+        Kj,
+        Zt,
+        Tj
     }
 
 }
