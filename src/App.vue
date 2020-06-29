@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }
@@ -15,5 +16,8 @@ export default {
 *{
     margin:0;
     padding:0
+}
+body{
+    font-size: 12px;
 }
 </style>
