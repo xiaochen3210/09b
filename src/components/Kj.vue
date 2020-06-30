@@ -6,7 +6,8 @@
         <i class="van-icon van-icon-arrow">
           <!----></i>
       </div>
-      <ul>
+      <van-loading v-if="loading" /> 
+      <ul v-else>
           <Item v-for="c in list " :d ="c" ></Item>
       </ul>
     </div>
@@ -23,7 +24,8 @@ export default {
   props: {},
   data() {
     return {
-        list:{}
+        list:{},
+        loading:true
     }
   },
   watch: {},
@@ -32,8 +34,9 @@ export default {
   created() {
       this.http.get("https://api.it120.cc/small4/shop/goods/kanjia/list").then((msg)=>{
 
-              console.log(msg)
+              //console.log(msg)
               this.list = msg.data.data.goodsMap
+              this.loading = false
 
       })
   },

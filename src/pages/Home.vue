@@ -2,6 +2,7 @@
     <div class="home">
             <Ban></Ban>
             <Kj></Kj>
+            <Zt></Zt>
        
     </div>
 </template>

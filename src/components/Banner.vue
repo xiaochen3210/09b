@@ -1,7 +1,10 @@
 <template>
   <div class="wrapper">
+      <van-loading size="24px" v-if="loading" >加载中...</van-loading>
+    <div v-else>
+
     
-      <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
                 <van-swipe-item v-for="item of banners" :key="item.id">
                        <img :src="item.picUrl" alt="">
                 </van-swipe-item>
@@ -24,6 +27,7 @@
             <p>专栏</p>
          </li>
      </ul>
+     </div>
   </div>
 </template>
 
@@ -33,7 +37,8 @@ export default {
   props:{},
   data(){
     return {
-        banners:[]
+        banners:[],
+        loading:true
     }
   },
   watch:{},
@@ -42,8 +47,9 @@ export default {
      created(){
             this.http.get("https://api.it120.cc/small4/banner/list").then((msg)=>{
                      
-                     console.log(msg)
+                  //   console.log(msg)
                      this.banners = msg.data.data
+                     this.loading = false
 
             })
 
