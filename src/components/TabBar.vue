@@ -1,28 +1,20 @@
 <template>
-  <div class="wrapper">
-    <van-tabbar route>
-      <van-tabbar-item replace
-                       to="/home"
-                       icon="home-o">
-        标签
-      </van-tabbar-item>
-      <van-tabbar-item replace
-                       to="/search"
-                       icon="search">
-        标签
-      </van-tabbar-item>
-      <van-tabbar-item replace
-                       to="/home1"
-                       icon="home-o">
-        标签
-      </van-tabbar-item>
-      <van-tabbar-item replace
-                       to="/search2"
-                       icon="search">
-        标签
-      </van-tabbar-item>
+
+    <van-tabbar route active-color="#f00" >
+                <van-tabbar-item  to="/home/index" icon="home-o">
+                    首页            
+                </van-tabbar-item>
+                 <van-tabbar-item to="/home/cate" icon="qr">
+                    分类            
+                </van-tabbar-item>
+                 <van-tabbar-item to="" icon="shopping-cart-o">
+                    购物车            
+                </van-tabbar-item>
+                 <van-tabbar-item  to="" icon="manager-o">
+                    我的           
+                </van-tabbar-item>
     </van-tabbar>
-  </div>
+
 </template>
 
 <script>

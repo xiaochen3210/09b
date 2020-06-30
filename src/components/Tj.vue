@@ -5,45 +5,37 @@
         <!----></i>
     </div>
     <ul>
-      <li class=""><img src="https://dcdn.it120.cc/2019/07/24/e2d4f82f-f9af-48ff-9865-61561fd4c2f1.jpg"
-             alt="">
-        <p>重返校园 男式连帽牛仔外套</p>
-        <p>复古校园感，青春活力</p>
-        <p>￥0.9</p>
-      </li>
-      <li class=""><img src="https://cdn.it120.cc/apifactory/2018/11/06/035117f304fe7d475f4f2b3b317e7719.png"
-             alt="">
-        <p>男式天鹅绒保暖牛仔裤</p>
-        <p>柔软中包裹充盈的热量，抗冬无惧</p>
-        <p>￥1</p>
-      </li>
-      <li class=""><img src="https://dcdn.it120.cc/2019/07/24/a30b67dd-61be-41bd-841c-7e3f8844e958.jpg"
-             alt="">
-        <p>男式羊羔绒休闲外套</p>
-        <p>仿羊绒内里，却有真实安全感</p>
-        <p>￥1</p>
-      </li>
-      <li class=""><img src="https://cdn.it120.cc/apifactory/2018/11/06/cb9a3a9d23faf30742cdf76b21b6e29a.jpg"
-             alt="">
-        <p>挚·商务简约提花四件套</p>
-        <p>140支脂密纯棉，双丝光工艺，轻奢美学</p>
-        <p>￥1</p>
-      </li>
+        <Product v-for="item in goods" :key="item.id" :p="item"    />
+
     </ul>
   </div>
 </template>
 
 <script>
+import Product from "./Product"
 export default {
-  components: {},
+  components: {
+      Product
+  },
   props: {},
   data() {
-    return {}
+    return {
+        goods:[]
+    }
   },
   watch: {},
   computed: {},
   methods: {},
-  created() {},
+  created() {
+      this.http.get("https://api.it120.cc/small4/shop/goods/list").then((msg)=>{
+
+             console.log(msg)
+             this.goods = msg.data.data
+
+
+      })
+
+  },
   mounted() {}
 }
 </script>
