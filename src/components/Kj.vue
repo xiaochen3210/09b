@@ -7,75 +7,7 @@
           <!----></i>
       </div>
       <ul>
-        <li class="">
-          <div><img src="https://dcdn.it120.cc/2019/07/24/a30b67dd-61be-41bd-841c-7e3f8844e958.jpg"
-                 alt="">
-            <div>
-              <p>男式羊羔绒休闲外套</p>
-              <p>仿羊绒内里，却有真实安全感</p>
-              <ol>
-                <li>
-                  <p>￥1</p>
-                  <p>低价</p>
-                </li>
-                <li>
-                  <p>￥429</p>
-                  <p>原价</p>
-                </li>
-                <li>
-                  <p>100件</p>
-                  <p>限量</p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </li>
-        <li class="">
-          <div><img src="https://cdn.it120.cc/apifactory/2018/11/06/035117f304fe7d475f4f2b3b317e7719.png"
-                 alt="">
-            <div>
-              <p>男式天鹅绒保暖牛仔裤</p>
-              <p>柔软中包裹充盈的热量，抗冬无惧</p>
-              <ol>
-                <li>
-                  <p>￥1</p>
-                  <p>低价</p>
-                </li>
-                <li>
-                  <p>￥269</p>
-                  <p>原价</p>
-                </li>
-                <li>
-                  <p>200件</p>
-                  <p>限量</p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </li>
-        <li class="">
-          <div><img src="https://dcdn.it120.cc/2019/07/24/e2d4f82f-f9af-48ff-9865-61561fd4c2f1.jpg"
-                 alt="">
-            <div>
-              <p>重返校园 男式连帽牛仔外套</p>
-              <p>复古校园感，青春活力</p>
-              <ol>
-                <li>
-                  <p>￥0.9</p>
-                  <p>低价</p>
-                </li>
-                <li>
-                  <p>￥1</p>
-                  <p>原价</p>
-                </li>
-                <li>
-                  <p>200件</p>
-                  <p>限量</p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </li>
+          <Item v-for="c in list " :d ="c" ></Item>
       </ul>
     </div>
 
@@ -83,16 +15,28 @@
 </template>
 
 <script>
+import Item from "./Item"
 export default {
-  components: {},
+  components: {
+      Item
+  },
   props: {},
   data() {
-    return {}
+    return {
+        list:{}
+    }
   },
   watch: {},
   computed: {},
   methods: {},
-  created() {},
+  created() {
+      this.http.get("https://api.it120.cc/small4/shop/goods/kanjia/list").then((msg)=>{
+
+              console.log(msg)
+              this.list = msg.data.data.goodsMap
+
+      })
+  },
   mounted() {}
 }
 </script>

@@ -2,8 +2,7 @@
     <div class="home">
             <Ban></Ban>
             <Kj></Kj>
-            <Zt></Zt>
-            <Tj></Tj>
+       
     </div>
 </template>
 <script>
@@ -11,6 +10,7 @@ import Banner from "../components/Banner"
 import Kj from "../components/Kj"
 import Zt from "../components/Zt"
 import Tj from "../components/Tj"
+import TabBar from "../components/TabBar"
 export default {
     data(){
           return {
@@ -21,7 +21,8 @@ export default {
         Ban:Banner,
         Kj,
         Zt,
-        Tj
+        Tj,
+        TabBar
     }
 
 }
