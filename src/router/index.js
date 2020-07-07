@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/pages/Home'
 import Index from '@/pages/Index'
 import Cate from '@/pages/Cate'
+import Login from '@/pages/Login'
+import Zhuce from '@/pages/Zhuce'
 Vue.use(Router)
 
 export default new Router({
@@ -31,6 +33,14 @@ export default new Router({
 
         ]
 
+      },
+      {
+          path:"/login",
+          component:Login
+      },
+      {
+          path:"/zhuce",
+          component:Zhuce
       }
   ]
 })
